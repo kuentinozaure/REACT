@@ -43,6 +43,17 @@ class Board extends Component {
     );
   }
 
+  displayLoaded = () => {
+    let content = this.state.data.map((champ, index) => {
+      return (
+        <div key={index}>
+          <b>Username:</b>&nbsp;{champ.name},&nbsp;
+        </div>
+      );
+    });
+    return content;
+  }
+  
   componentDidMount() {
     const url = 'https://raw.githubusercontent.com/caro3801/vuejs-tpbase/master/public/champions.json';
     axios.get(url)
@@ -58,9 +69,7 @@ class Board extends Component {
       });
   }
 
-  displayLoaded = () => {
-    return "erllo"
-  }
+  
 
   //THIS CODE IS WORKING :)
   /*afficher = () => {
