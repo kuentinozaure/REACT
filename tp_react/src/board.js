@@ -15,15 +15,30 @@ class Board extends Component {
   render() {
     return (
       <section className="card-columns ">
-          {this.afficher()}
+          {}
       </section>
     );
   }
 
   //https://raw.githubusercontent.com/caro3801/vuejs-tpbase/master/public/champions.json
   
+  componentDidMount() {
+    const url = 'https://raw.githubusercontent.com/caro3801/vuejs-tpbase/master/public/champions.json';
+    axios.get(url)
+      .then(response => {
+        this.setState({
+          data: response.data,
+          loading: false
+        });
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
-  afficher = () => {
+  //THIS CODE IS WORKING :)
+  /*afficher = () => {
     let content = this.state.data.map((user, index) => {
       return (
         <div key={index}>
@@ -57,7 +72,8 @@ class Board extends Component {
       .catch(error => {
         console.log(error);
       });
-	}
+  }*/
+  
 }
 
 export default Board;
