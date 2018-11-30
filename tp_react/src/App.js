@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './header.js';
 import Board from './board.js';
 import Footer from './footer.js'
-import logo from './logo.svg';
 import './App.css';
 
 
