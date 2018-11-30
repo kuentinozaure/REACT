@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import Card from './card.js'
 import axios from 'axios';
 
+//npm install axios
 
 class Board extends Component {
-
+  //https://pokemontcg.io/sets
+  //https://durbanvillegames.co.za/wp-content/uploads/2018/10/022b075df271bea6c293a72c10a2ef4a-12.jpg
   constructor(props){
     super(props);
     this.state = {
       data : [],
-      championsName:[],
       loading:true,
     };
   }
@@ -20,9 +21,8 @@ class Board extends Component {
       </section>
     );
   }
-
-  //https://raw.githubusercontent.com/caro3801/vuejs-tpbase/master/public/champions.json
   
+  //display loading if data is not loaded else display data 
   display(){
     if(this.state.loading){
       return(this.displayLoading);
@@ -30,7 +30,7 @@ class Board extends Component {
       return(this.displayLoaded());
     }
   }
-
+  //display screen for loading
   displayLoading(){
     return(
       <div className="row">
@@ -42,71 +42,34 @@ class Board extends Component {
       </div>
     );
   }
-
+  //display screen for data
   displayLoaded = () => {
-    let content = this.state.data.map((champ, index) => {
+    console.log(this.state.data);
+    let content = this.state.data.map((pkmn, index) => {
       return (
-        <div key={index}>
-          <b>Username:</b>&nbsp;{champ.name},&nbsp;
-        </div>
+        <Card 
+            url={pkmn.imageUrl}
+            name={pkmn.name}
+        />
       );
     });
-    return content;
-  }
-  
-  componentDidMount() {
-    const url = 'https://raw.githubusercontent.com/caro3801/vuejs-tpbase/master/public/champions.json';
-    axios.get(url)
-      .then(response => {
-        this.setState({
-          data: response.data.data,
-          loading: false
-        });
-        //console.log(response.data.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
-  
-
-  //THIS CODE IS WORKING :)
-  /*afficher = () => {
-    let content = this.state.data.map((user, index) => {
-      return (
-        <div key={index}>
-          <b>Username:</b>&nbsp;{user.username},&nbsp;
-          <b>Email:</b>&nbsp;{user.email}&nbsp;
-        </div>
-      );
-    });
-
+    console.log(content);
     return content;
   }
 
-   createCard = () => {
-    let cards = [];
-
-    for (let i = 0; i < 9; i++) {
-      cards.push(<Card cardName="Ivern_0.jpg" />);
-    }
-    return cards;
-  }
-
   componentDidMount() {
-    const url = 'https://jsonplaceholder.typicode.com/users';
+    const url = 'https://api.pokemontcg.io/v1/cards?setCode=base3';
     axios.get(url)
       .then(response => {
         this.setState({
-          data: response.data,
-          loading: false
+          data: response.data.cards,
+          loading: false,
         });
       })
       .catch(error => {
         console.log(error);
       });
-  }*/
+  }
   
 }
 
