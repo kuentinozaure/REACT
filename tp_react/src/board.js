@@ -11,8 +11,6 @@ class Board extends Component {
     super(props);
     this.state = {
       data : [],
-      imageUrls :[],
-      pokemonName : [],
       loading:true,
     };
   }
@@ -46,55 +44,13 @@ class Board extends Component {
   }
   //display screen for data
   displayLoaded = () => {
-    /*this.getImageUrls();
-    this.getPokemonName();*/
-    //this.createCard()
-
-  }
-
-  createCard = () => {
-      let choiceMaxUser=6
-      let cards = [];
-      let numberCard = [];
-      for (let i = 0; i < choiceMaxUser/2; i++) {
-          cards.push(
-            <Card 
-              name={this.state.pokemonName[i]}
-              url={this.state.imageUrls[i]}
-            />
-          );
-          numberCard.push(i);
-      }
-      for(let i=choiceMaxUser/2;i>0;i--){
-        cards.push(i);
-      }
-      return cards;
-  }
-
-
-  getPokemonName = () =>{
-    let content;
-    let jsonPkmn = this.state.data
-    let name=[];
-
-    content = jsonPkmn.map((pkmn, index) => {
-        name.push(pkmn.name)
-    });
-    this.setState({
-      pokemonName:name,
-    });
-    return content;
-  }
-  getImageUrls = () =>{
-    let content;
-    let jsonPkmn = this.state.data
-    let url =[];
-
-    content = jsonPkmn.data.map((pkmn, index) => {
-        url.push(pkmn.imageUrl)
-    });
-    this.setState({
-      imageUrls:url,
+    let content = this.state.data.map((pkmn, index) => {
+      return (
+        <Card 
+            url={pkmn.imageUrl}
+            name={pkmn.name}
+        />
+      );
     });
     return content;
   }
