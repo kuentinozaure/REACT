@@ -49,6 +49,7 @@ class Board extends Component {
         <Card 
             url={pkmn.imageUrl}
             name={pkmn.name}
+            key= {index}
         />
       );
     });
