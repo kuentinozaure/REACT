@@ -12,7 +12,6 @@ class App extends Component {
       <div className="App">
         <Header/>
         <UserChoice/>
-        <Footer/>
       </div>
     );
   }
