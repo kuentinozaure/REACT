@@ -5,7 +5,7 @@ class header extends Component {
     return (
       <div className="bg-dark">
         <nav className="navbar bg-dark">
-            <span className="navbar-brand text-secondary">LOL MEMO</span>
+            <span className="navbar-brand text-secondary">POKEMON MEMO</span>
         </nav>
       </div>
     );
