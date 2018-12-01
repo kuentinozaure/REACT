@@ -11,6 +11,7 @@ class Board extends Component {
     super(props);
     this.state = {
       data : [],
+      cards : [],
       loading:true,
     };
   }
@@ -44,16 +45,27 @@ class Board extends Component {
   }
   //display screen for data
   displayLoaded = () => {
+    let listCards = [];
     let content = this.state.data.map((pkmn, index) => {
-      return (
+      listCards.push(
         <Card 
-            url={pkmn.imageUrl}
-            name={pkmn.name}
-            key= {index}
+          url={pkmn.imageUrl}
+          name={pkmn.name}
+          key= {index}
         />
       );
     });
+    content= this.CreateCards(listCards);
     return content;
+  }
+
+  CreateCards = (listCards)  =>{
+    let cards = []
+
+    for (let i = 0; i < 6; i++) {
+      cards.push(listCards[i]) //replace by random number goes to start of array and go up to listCards.length
+    }
+    return cards
   }
 
   componentDidMount() {
