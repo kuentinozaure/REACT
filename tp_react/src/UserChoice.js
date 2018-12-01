@@ -27,7 +27,6 @@ class UserChoice extends Component {
     }
 
     clickButtonChoice = (buttonVal) =>{
-        console.log("valeur de buttonVal"+buttonVal)
         this.setState({
             userChoice:buttonVal,
             isChoiced:true,
