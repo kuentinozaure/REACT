@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header.js';
-import Board from './board.js';
+import UserChoice from './UserChoice.js';
 import Footer from './footer.js'
 import './App.css';
 
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <Board/>
+        <UserChoice/>
         <Footer/>
       </div>
     );
