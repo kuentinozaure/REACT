@@ -62,7 +62,7 @@ class Board extends Component {
   CreateCards = (listCards)  =>{
     let cards = []
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 12; i++) {
       cards.push(listCards[i]) //replace by random number goes to start of array and go up to listCards.length
     }
     return cards
