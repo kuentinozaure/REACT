@@ -36,20 +36,21 @@ section {
   width: 80%;
   margin: auto;
 }
-/* line 11, ../sass/styles.scss */
+
+/*
 section .card {
   background-image: url(https://durbanvillegames.co.za/wp-content/uploads/2018/10/022b075df271bea6c293a72c10a2ef4a-12.jpg);
   background-size: contain;
   transition: transform 1s;
   transition-timing-function: ease-in-out;
 }
-/* line 18, ../sass/styles.scss */
+
 section .card img {
   opacity: 0;
   transition: opacity 0.1s, transform 0.1s;
   transition-delay: 0.5s;
 }
-/* line 24, ../sass/styles.scss */
+
 section .card p {
   opacity: 0;
   transition: opacity 0.1s, transform 0.1s;
@@ -57,17 +58,13 @@ section .card p {
   background-color: black;
   color: white;
 }
-/* line 31, ../sass/styles.scss */
+
 section .card:hover {
   transform: rotateY(180deg);
 }
-/* line 33, ../sass/styles.scss */
+
 section .card:hover img {
   opacity: 1;
   transform: rotateY(180deg);
 }
-/* line 37, ../sass/styles.scss */
-section .card:hover p {
-  opacity: 1;
-  transform: rotateY(180deg);
-}
+*/

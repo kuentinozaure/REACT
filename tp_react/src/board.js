@@ -48,13 +48,15 @@ class Board extends Component {
   displayLoaded = () => {
     let listCards = [];
     let content = this.state.data.map((pkmn, index) => {
-      listCards.push(
-        <Card 
-          url={pkmn.imageUrl}
-          name={pkmn.name}
-          key= {index}
-        />
-      );
+      if(index <= this.props.userChoice-1){
+        listCards.push(
+          <Card 
+            url={pkmn.imageUrl}
+            name={pkmn.name}
+            cardId={index}
+          />
+        );
+      }
     });
     content= this.CreateCards(listCards);
     return content;
