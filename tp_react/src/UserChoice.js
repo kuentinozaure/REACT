@@ -44,13 +44,13 @@ class UserChoice extends Component {
                 <div className="col-md-4 col-md-offset-5"></div>
                 <div className="col-md-4 col-md-offset-5">
                     <div className="btn-group-vertical">
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,6)}>6 CARTES</button>
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,12)}>12 CARTES</button>
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,18)}>18 CARTES</button>
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,24)}>24 CARTES</button>
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,30)}>30 CARTES</button>
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,36)}>36 CARTES</button>
-                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,102)}>102 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,6)}>AFFICHER 6 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,12)}>AFFICHER 12 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,18)}>AFFICHER 18 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,24)}>AFFICHER 24 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,30)}>AFFICHER 30 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,36)}>AFFICHER 36 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,102)}>AFFICHER 102 CARTES</button>
                     </div>
                 </div>
                 <div className="col-md-4 col-md-offset-5"></div>
