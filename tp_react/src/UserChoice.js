@@ -50,6 +50,7 @@ class UserChoice extends Component {
                         <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,24)}>24 CARTES</button>
                         <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,30)}>30 CARTES</button>
                         <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,36)}>36 CARTES</button>
+                        <button type="button" className="btn btn-secondary"  onClick={this.clickButtonChoice.bind(this,102)}>102 CARTES</button>
                     </div>
                 </div>
                 <div className="col-md-4 col-md-offset-5"></div>
