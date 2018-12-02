@@ -6,6 +6,7 @@ class Card extends Component {
     super(props);
     this.state = {
       isDisplayed:false,
+      returnCard:0,
     }
   }
   render() {
@@ -13,11 +14,11 @@ class Card extends Component {
         this.display()
     );
   }
-
   display = () =>{
     if(this.state.isDisplayed){
       return(this.displayCardPicture())
-    }else{
+    }
+    else{
       return(this.displayCardBack())
     }
   }
@@ -39,15 +40,17 @@ class Card extends Component {
   }
   onClickOnCard = () =>{
     if(this.state.isDisplayed){
+      let i=this.state.returnCard+1;
       this.setState({
         isDisplayed:false,
+        returnCard:i,
       })
     }else{
       this.setState({
         isDisplayed:true,
+        returnCard:0,
       })
     }
-    console.log("clic sur la carte valeur du props isDisplay : "+this.props.isDisplay)
   }
 }
 export default Card;
