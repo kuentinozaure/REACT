@@ -7,7 +7,7 @@ import axios from 'axios';
 class Board extends Component {
   //https://pokemontcg.io/sets
   //https://durbanvillegames.co.za/wp-content/uploads/2018/10/022b075df271bea6c293a72c10a2ef4a-12.jpg
-  
+
   constructor(props){
     super(props);
     this.state = {
@@ -23,8 +23,8 @@ class Board extends Component {
       </section>
     );
   }
-  
-  //display loading if data is not loaded else display data 
+
+  //display loading if data is not loaded else display data
   display(){
     if(this.state.loading){
       return(this.displayLoading);
@@ -50,7 +50,7 @@ class Board extends Component {
     let content = this.state.data.map((pkmn, index) => {
       if(index <= this.props.userChoice-1){
         listCards.push(
-          <Card 
+          <Card
             url={pkmn.imageUrl}
             name={pkmn.name}
             cardId={index}
@@ -62,33 +62,18 @@ class Board extends Component {
     return content;
   }
 
-  getRandomInt = (max) =>{
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-  
   CreateCards = (listCards)  =>{
     let cards = [];
-    let generateCardRandom = [];
-    let randomNumber;
+    let otherCard = [];
+    let returnTab =[];
+
     for (let i = 0; i < this.props.userChoice/2; i++) {
-        cards.push(listCards[i]) //replace by random number goes to start of array and go up to listCards.length
+        cards.push(listCards[i])
     }
 
-    
-    randomNumber=this.getRandomInt(cards.length);
-
-    while(generateCardRandom.length != cards.length){
-      if(randomNumber==cards.length-1){
-        generateCardRandom.push(cards[randomNumber]);
-        randomNumber=0;
-      }else{
-        generateCardRandom.push(cards[randomNumber]);
-        randomNumber+=1;
-      }
-    }
-    cards.push(generateCardRandom);
-    cards.reverse();
-    return cards
+    otherCard = cards;
+    returnTab = cards.concat(otherCard.reverse());
+    return returnTab
   }
 
   componentDidMount() {
@@ -104,7 +89,7 @@ class Board extends Component {
         console.log(error);
       });
   }
-  
+
 }
 
 export default Board;
