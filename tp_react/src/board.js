@@ -14,6 +14,8 @@ class Board extends Component {
       data : [],
       cards : [],
       loading:true,
+      card1:Object,
+      card2:Object,
     };
   }
   render() {
@@ -54,12 +56,18 @@ class Board extends Component {
             url={pkmn.imageUrl}
             name={pkmn.name}
             cardId={index}
+            sendData={this.getData}
           />
         );
       }
     });
     content= this.CreateCards(listCards);
     return content;
+  }
+
+  getData(val){
+    //si le valeur de card1 est null faire et card2
+    console.log(val);
   }
 
   CreateCards = (listCards)  =>{
@@ -89,7 +97,6 @@ class Board extends Component {
         console.log(error);
       });
   }
-
 }
 
 export default Board;

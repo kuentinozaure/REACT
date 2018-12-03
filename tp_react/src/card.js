@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 class Card extends Component {
 
+//https://stackoverflow.com/questions/38394015/how-to-pass-data-from-child-component-to-its-parent-in-reactjs
   constructor(props){
     super(props);
     this.state = {
       isDisplayed:false,
-      returnCard:0,
+      card1:"",
+      card2:"",
     }
   }
   render() {
@@ -25,7 +27,7 @@ class Card extends Component {
 
   displayCardPicture = () =>{
     return(
-      <div className="card bg-dark text-white" id={this.props.cardId} onClick={this.onClickOnCard.bind(this)}>
+      <div className="card bg-dark text-white" id={this.props.cardId} onClick={this.onClickOnCard.bind(this,1)}>
           <img className="card-img-top" src={this.props.url}/>
           <p className="card-text">{this.props.name}</p>
       </div>
@@ -38,8 +40,16 @@ class Card extends Component {
       </div>
     );
   }
-  onClickOnCard = () =>{
-    if(this.state.isDisplayed){
+
+  setParentData = (value) =>{
+   this.props.sendData(value);
+  }
+
+  onClickOnCard = (cards) =>{
+
+    this.props.sendData(cards);
+
+    /*if(this.state.isDisplayed){
       let i=this.state.returnCard+1;
       this.setState({
         isDisplayed:false,
@@ -50,7 +60,7 @@ class Card extends Component {
         isDisplayed:true,
         returnCard:0,
       })
-    }
+    }*/
   }
 }
 export default Card;
